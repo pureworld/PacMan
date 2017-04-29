@@ -11,7 +11,6 @@ public:
     enum {
         StillItem = 0x01,
         ActiveItem = 0x02,
-
         Road = 0x10,
         Pean = 0x20,
         Wall = 0x40,
