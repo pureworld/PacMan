@@ -75,27 +75,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ActiveItem.cpp" />
-    <ClCompile Include="Ghost.cpp" />
-    <ClCompile Include="GhostHome.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Pean.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Road.cpp" />
-    <ClCompile Include="StillItem.cpp" />
-    <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="PdcCurses.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ActiveItem.h" />
-    <ClInclude Include="Ghost.h" />
-    <ClInclude Include="GhostHome.h" />
     <ClInclude Include="Item.h" />
-    <ClInclude Include="Pean.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Road.h" />
-    <ClInclude Include="StillItem.h" />
-    <ClInclude Include="Wall.h" />
+    <ClInclude Include="PdcCurses.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

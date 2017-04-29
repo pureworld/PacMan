@@ -3,7 +3,6 @@
 
 CItem::CItem(void)
 {
-    m_nType = 0x00;
 }
 
 
