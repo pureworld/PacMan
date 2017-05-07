@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <conio.h>
+#include "PdcCurses.h"
 using namespace std;
 
 const int ROW = 31;
@@ -9,17 +11,17 @@ class CItem
 {
 public:
     enum {
-        StillItem = 0x01,
-        ActiveItem = 0x02,
-        Road = 0x10,
-        Pean = 0x20,
-        Wall = 0x40,
-        GhostHome = 0x80,
+        ITEM_PEAN,
+        ITEM_WALL,
+        ITEM_GHOME,
+        ITEM_ROAD
     };
-
-    CItem(void);
-    virtual ~CItem(void);
+    virtual ~CItem() = 0 { }
     virtual void Show() = 0;
-
+protected:
+    CPdcCurses* m_pPdc;
+    int m_nRowPos;
+    int m_nColPos;
+    int m_nCollisionLv;
 };
 

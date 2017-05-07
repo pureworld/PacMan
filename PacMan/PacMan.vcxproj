@@ -75,13 +75,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ActiveItem.cpp" />
+    <ClCompile Include="Blinky.cpp" />
+    <ClCompile Include="Clyde.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameMap.cpp" />
+    <ClCompile Include="Ghost.cpp" />
+    <ClCompile Include="Inky.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PdcCurses.cpp" />
+    <ClCompile Include="Pean.cpp" />
+    <ClCompile Include="Pinky.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Road.cpp" />
+    <ClCompile Include="StillItem.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ActiveItem.h" />
+    <ClInclude Include="Blinky.h" />
+    <ClInclude Include="Clyde.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameMap.h" />
+    <ClInclude Include="GHome.h" />
+    <ClInclude Include="Ghost.h" />
+    <ClInclude Include="Inky.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="PdcCurses.h" />
+    <ClInclude Include="Pean.h" />
+    <ClInclude Include="Pinky.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Road.h" />
+    <ClInclude Include="StillItem.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
