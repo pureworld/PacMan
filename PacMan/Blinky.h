@@ -8,6 +8,7 @@ class CBlinky :
     public CGhost
 {
 public:
+    CBlinky() { }
     CBlinky(int nRow, int nCol);
     ~CBlinky(void);
 

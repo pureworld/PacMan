@@ -4,6 +4,7 @@ class CPlayer :
     public CActiveItem
 {
 public:
+    CPlayer() { }
     CPlayer(int nRow, int nCol);
     virtual ~CPlayer();
 

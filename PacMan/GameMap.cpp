@@ -90,6 +90,7 @@ int CGameMap::ShowMap() {
             m_pItem[i]->Show();
         }
     }
+    m_pPdc->PrintfAt(ROW + 1, 0, "press \'l\' to replay");
     m_pPdc->Refresh();
     return 1;
 }

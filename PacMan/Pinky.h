@@ -8,6 +8,7 @@ class CPinky :
     public CGhost
 {
 public:
+    CPinky() { }
     CPinky(int nRow, int nCol);
     ~CPinky(void);
 

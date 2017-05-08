@@ -8,6 +8,7 @@ class CInky :
     public CGhost
 {
 public:
+    CInky() { }
     CInky(int nRow, int nCol);
     ~CInky(void);
 

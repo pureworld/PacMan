@@ -56,16 +56,16 @@ CGame::~CGame(void)
 
 void CGame::StartGame() {
     m_pMap->ShowMap();
-    m_pPdc->PrintfAt(ROW / 2, 0, 
-        "1.New Game\n2.RePlay\ninput number to choose function");
-    m_pPdc->Refresh();
-    char ch;
-    ch = _getch();
-    if (ch == '1') {
+//     m_pPdc->PrintfAt(ROW / 2, 0, 
+//         "1.New Game\n2.RePlay\ninput number to choose function");
+//     m_pPdc->Refresh();
+//     char ch;
+//     ch = _getch();
+//    if (ch == '1') {
         MainLoop();
-    } else {
-        Replay();
-    }
+//    } else {
+//        Replay();
+//    }
 }
 
 void CGame::MainLoop() {
@@ -83,6 +83,10 @@ void CGame::MainLoop() {
             m_pPinky->AutoTrace();
             m_pInky->AutoTrace();
             m_pClyde->AutoTrace();
+            m_BlinkyList.push_back(*m_pBlinky);
+            m_PinkyList.push_back(*m_pPinky);
+            m_InkyList.push_back(*m_pInky);
+            m_ClydeList.push_back(*m_pClyde);
             Update();
             clkStart = clkCurtime;
         }
@@ -116,6 +120,7 @@ void CGame::MainLoop() {
                     new CRoad(m_pPlayer->GetRow(), m_pPlayer->GetCol()));
                 CGameMap::g_Map[m_pPlayer->GetRow()][m_pPlayer->GetCol()] = CItem::ITEM_ROAD;
             }
+            m_PlayerList.push_back(*m_pPlayer);
             Update();
             clkStart2 = clkCurtime;
         }
@@ -152,18 +157,46 @@ void CGame::MainLoop() {
             case 'd':
                 m_pPlayer->SetDir(CActiveItem::DIR_RIGHT);
                 break;
+            case 'm':
+                SaveFile();
+                break;
+            case 'l':
+                Replay();
+                break;
             }
         }
     }
 }
 
 void CGame::Replay() {
-    
+    CMyList<CPlayer>::iterator it = m_PlayerList.begin();
+    CMyList<CBlinky>::iterator it1 = m_BlinkyList.begin();
+    CMyList<CPinky>::iterator it2 = m_PinkyList.begin();
+    CMyList<CInky>::iterator it3 = m_InkyList.begin();
+    CMyList<CClyde>::iterator it4 = m_ClydeList.begin();
+    for (; it != m_PlayerList.end(); it++, it1++, it2++, it3++, it4++) {
+        CPlayer* pPlayer = new CPlayer(*it);
+        CBlinky* item2 = new CBlinky(*it1);
+        CPinky* item3 = new CPinky(*it2);
+        CInky* item4 = new CInky(*it3);
+        CClyde* item5 = new CClyde(*it4);
+        m_pMap->SetItem(ROW * COL, pPlayer);
+        m_pMap->SetItem(ROW * COL + 1, item2);
+        m_pMap->SetItem(ROW * COL + 2, item3);
+        m_pMap->SetItem(ROW * COL + 3, item4);
+        m_pMap->SetItem(ROW * COL + 4, item5);
+        Update();
+        _sleep(1000);
+    }
+    exit(0);
+}
+
+void CGame::SaveFile() {
+
 }
 
 void CGame::Update() {
     m_pPdc->ClearWin();
-    //m_pMap->Flush(obj);
     m_pMap->ShowMap();
 }
 

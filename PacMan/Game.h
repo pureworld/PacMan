@@ -12,6 +12,7 @@ public:
     void StartGame();
     void MainLoop();
     void Replay();
+    void SaveFile();
     void Update();
     bool CanMove(int, int, CActiveItem*);
 private:
@@ -23,5 +24,10 @@ private:
     CInky* m_pInky;
     CClyde* m_pClyde;
 
+    CMyList<CPlayer> m_PlayerList;
+    CMyList<CBlinky> m_BlinkyList;
+    CMyList<CPinky> m_PinkyList;
+    CMyList<CInky> m_InkyList;
+    CMyList<CClyde> m_ClydeList;
 };
 

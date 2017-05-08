@@ -113,5 +113,8 @@
     <ClInclude Include="Clyde.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="MyList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

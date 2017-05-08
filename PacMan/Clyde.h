@@ -9,6 +9,7 @@ class CClyde :
     public CGhost
 {
 public:
+    CClyde() { }
     CClyde(int nRow, int nCol);
     ~CClyde(void);
 
